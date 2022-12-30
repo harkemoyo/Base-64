@@ -29,8 +29,7 @@ out.innerHTML += "17 in base-36 is " + num.toString(36) + "<br/>";
         // fileReader.readAsDataURL( )
         // https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL
         // https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsDataURL
-        let imgTemp = document.createElement('img');
-        imgTemp.src = '';
+    
             
         
         let input = document.getElementById('imgInput');
@@ -72,10 +71,14 @@ out.innerHTML += "17 in base-36 is " + num.toString(36) + "<br/>";
             // canvas.toDataURL(type, encoderOptions);
             //https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL
             let canvas = document.getElementById('canvas');
-            canvas.id = 'canvas';
-            const context = canvas.getContext('2d');
             
-            context.drawImage(imgTemp, 0, 0, 128, 128);
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#ccc';
+            ctx.rect(0, 0, canvas.width, canvas.height);
+            ctx.fill();
+            ctx.fillStyle = 'blue';
+            ctx.font ='35px serif';
+            ctx.fillText('decode base64', 20,60,110);
             //get the image from the canvas as a base64 string
             let canvas64 = canvas.toDataURL();
             out.innerHTML += 'Base64 String from Canvas<br/>' + canvas64 + '<br/>';
