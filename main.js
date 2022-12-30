@@ -77,7 +77,7 @@ out.innerHTML += "17 in base-36 is " + num.toString(36) + "<br/>";
             ctx.rect(0, 0, canvas.width, canvas.height);
             ctx.fill();
             ctx.fillStyle = 'blue';
-            ctx.font ='35px serif';
+
             ctx.fillText('decode base64', 20,60,110);
             //get the image from the canvas as a base64 string
             let canvas64 = canvas.toDataURL();
