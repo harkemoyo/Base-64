@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything About Base-64 </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=""/>
+</head>
+<body>
+    <header>
+        <h1>Everything you didn't want to know about Base-64</h1>
+    </header>
+    <main>
+        <p> All your data is broken up into 3-byte groups.With 8 bits per byte that makes 24 bits in each group. Each 24 bits of data is then turned into groups of 4 x 6bits.</p>
+        <p>If we end up with a group at the end of the data stream that only has one or two bytes then it gets padded with zeros. These padding zeros will be represented with the equal sign <code>=</code> character.</p>
+        <p>111111 would be the largest number you could make with 6 bits. That value, in decimal, is 63. So there are 64 different values. They are represented with the following characters.</p>
+        <pre> A-Z     a-z     0-9     +     / </pre>
+        <pre> 0-25    26-51   52-61   62    63</pre>
+        <output id="out">
+            
+        </output>
+        <form>
+            <input type="file" accepts="image/" id="imgInput"/>
+            
+        </form>
+        
+        
+        <canvas id="canvas" width="200" height="200"></canvas>
+    </main>
+    <!-- js -->
+    <script src="main.js"></script>
+</body>
+</html>
